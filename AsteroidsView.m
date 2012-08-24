@@ -14,6 +14,7 @@
 @property (strong) NSMutableArray* asteroids;
 @property (strong) NSMutableArray* asteroidImages;
 @property (strong) Spaceship* spaceship;
+@property (strong) CALayer* backgroundLayer;
 @end
 
 
@@ -22,14 +23,23 @@
 @synthesize asteroids;
 @synthesize asteroidImages;
 @synthesize spaceship;
-
+@synthesize backgroundLayer;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        UIColor* background = [[UIColor alloc]initWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:@"background.png"]]];
-        [self setBackgroundColor:background];
+//        UIColor* background = [[UIColor alloc]initWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:@"background.png"]]];
+
+        UIImage* background =  [UIImage imageNamed:[NSString stringWithFormat:@"background.png"]];
+        
+        self.backgroundLayer = [CALayer new];
+        self.backgroundLayer.bounds = CGRectMake(0, 0, 500, 900);
+        self.backgroundLayer.position = CGPointMake(200, 300);
+        self.backgroundLayer.contents = (__bridge id)[background CGImage];
+        [self.layer addSublayer:backgroundLayer];
+    
+        [self moveBackground:self.backgroundLayer];
         self.asteroidImages = [NSMutableArray new];
         for (int i = 1; i < 5; ++i) {
             [self.asteroidImages addObject:[UIImage imageNamed:[NSString stringWithFormat:@"asteroid%d.png",i]]];
@@ -89,6 +99,18 @@
 
 
 
+-(void)moveBackground:(CALayer*)layer {
+     CABasicAnimation *backgroundScroll;
+     backgroundScroll=[CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
+     backgroundScroll.duration=20;
+     backgroundScroll.repeatCount=100;
+     backgroundScroll.autoreverses=NO;
+     backgroundScroll.fromValue=[NSNumber numberWithFloat:0];
+     backgroundScroll.toValue=[NSNumber numberWithFloat:-360];
+     [layer addAnimation:backgroundScroll forKey:@"animateLayer"];
+}
+ 
+ 
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
