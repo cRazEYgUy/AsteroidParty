@@ -9,10 +9,13 @@
 #import "AsteroidsView.h"
 #import "Asteroid.h"
 #import "Spaceship.h"
+#import "Laser.h"
+
 #import <QuartzCore/QuartzCore.h>
 @interface AsteroidsView()
 @property (strong) NSMutableArray* asteroids;
 @property (strong) NSMutableArray* asteroidImages;
+@property (strong) NSMutableArray* lasers;
 @property (strong) Spaceship* spaceship;
 @end
 
@@ -31,32 +34,36 @@
         UIColor* background = [[UIColor alloc]initWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:@"background.png"]]];
         [self setBackgroundColor:background];
         self.asteroidImages = [NSMutableArray new];
+        self.lasers = [NSMutableArray new];
         for (int i = 1; i < 5; ++i) {
             [self.asteroidImages addObject:[UIImage imageNamed:[NSString stringWithFormat:@"asteroid%d.png",i]]];
         }
         
         self.asteroids = [NSMutableArray new];
         for (int i = 0; i<= 20; i++) {
-            CGFloat x = ((double) arc4random()/UINT_MAX) * frame.size.width;
-            CGFloat y = ((double) arc4random()/UINT_MAX) * frame.size.height;
-            Asteroid* asteroid = [Asteroid createAsteroidWithPosition:CGPointMake(x, y) withView:self withImage:[self.asteroidImages objectAtIndex:(arc4random()%[self.asteroidImages count])]];
+            CGFloat x,y;
+            do {
+                x = (((double) arc4random()/UINT_MAX) * frame.size.width) - frame.size.width;
+                y = (((double) arc4random()/UINT_MAX) * frame.size.height) - frame.size.height;
+            } while ( sqrt(pow(x, 2)+pow(y, 2)) < 150 );
+            Asteroid* asteroid = [Asteroid createAsteroidWithPosition:CGPointMake(self.center.x + x, self.center.y + y) withView:self withImage:[self.asteroidImages objectAtIndex:(arc4random()%[self.asteroidImages count])]];
             [self.asteroids addObject:asteroid];
         }
         for (Asteroid* asteroid in self.asteroids){
             [asteroid move];
         }
-        CGFloat centerX = (self.bounds.size.width/2.0);
-        CGFloat centerY = (self.bounds.size.height/2.0);
         
-        self.spaceship = [Spaceship createSpaceshipWithPosition:CGPointMake(centerX, centerY) withView:self withImage:[UIImage imageNamed:@"ned.png"]];
+        self.spaceship = [Spaceship createSpaceshipWithPosition:self.center withView:self withImage:[UIImage imageNamed:@"ned.png"]];
         
-        [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(timerFired) userInfo:nil repeats:NO];
+        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerFired) userInfo:nil repeats:NO];
         
     }
     return self;
 }
 
 -(void)timerFired {
+    NSMutableArray *asteroidsToDelete = [NSMutableArray new];
+    NSMutableArray *lasersToDelete = [NSMutableArray new];
     for (Asteroid* asteroid in self.asteroids) {
         if (CGRectIntersectsRect(self.spaceship.layer.frame, ((CALayer*)asteroid.layer.presentationLayer).frame)) {
             [self.spaceship destroy];
@@ -64,29 +71,48 @@
             [endAlert show];
             return;
         }
+        for (Laser* laser in self.lasers) {
+            if (CGRectIntersectsRect(((CALayer*)laser.layer.presentationLayer).frame, ((CALayer*)asteroid.layer.presentationLayer).frame)) {
+                [laser destroy];
+                [lasersToDelete addObject:laser];
+                [asteroid destroy];
+                [asteroidsToDelete addObject:asteroid];
+            } else if (((CALayer*)laser.layer.presentationLayer).position.x <= 0 || ((CALayer*)laser.layer.presentationLayer).position.x >= self.layer.bounds.size.width ||
+                       laser.layer.position.y <= 0 || laser.layer.position.y >= self.layer.bounds.size.height) {
+                [laser destroy];
+                [lasersToDelete addObject:laser];
+            }
+        }
+        [self.lasers removeObjectsInArray:lasersToDelete];
     }
-    [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerFired) userInfo:nil repeats:NO];
+    
+    [self.asteroids removeObjectsInArray:asteroidsToDelete];
+    [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(timerFired) userInfo:nil repeats:NO];
+}
+
+-(void)fireLaser:(CGPoint)point {
+    CGFloat dy = self.center.y - point.y;
+    CGFloat dx = point.x - self.center.x;
+    double angle = atan(dy/dx);
+    if (dx < 0) {
+        angle += M_PI;
+    }
+    [self.spaceship rotate:angle];
+    
+    Laser *laser = [Laser createLaserWithPos:self.center withView:self withAngle:angle];
+    [self.lasers addObject:laser];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     UITouch* touch = [touches anyObject];
-    CGPoint touchPoint = [touch locationInView:self];
-    NSMutableArray *itemsToDelete = [NSMutableArray new];
-    for (Asteroid* asteroid in self.asteroids) {
-        if ([asteroid isTouchOnAsteroid:touchPoint]) {
-            [itemsToDelete addObject:asteroid];
-            [asteroid destroy];
+    [self fireLaser:[touch locationInView:self]];
 
-        }
-    }
-    [self.asteroids removeObjectsInArray:itemsToDelete];
-    
-    CGFloat dy = self.center.y - touchPoint.y;
-    CGFloat dx = touchPoint.x - self.center.x;
-    double angle = atan(dy/dx);
-    [self.spaceship rotate:angle];
 }
 
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch* touch = [touches anyObject];
+    [self fireLaser:[touch locationInView:self]];
+}
 
 
 /*
