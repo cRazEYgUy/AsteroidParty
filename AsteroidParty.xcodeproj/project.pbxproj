@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64473A4015E7258E00B596A5 /* Laser.m in Sources */ = {isa = PBXBuildFile; fileRef = 64473A3F15E7258E00B596A5 /* Laser.m */; };
 		96FD7AB515E6B7A60061A49B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FD7AB415E6B7A60061A49B /* UIKit.framework */; };
 		96FD7AB715E6B7A60061A49B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FD7AB615E6B7A60061A49B /* Foundation.framework */; };
 		96FD7AB915E6B7A60061A49B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FD7AB815E6B7A60061A49B /* CoreGraphics.framework */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64473A3E15E7258E00B596A5 /* Laser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Laser.h; sourceTree = "<group>"; };
+		64473A3F15E7258E00B596A5 /* Laser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Laser.m; sourceTree = "<group>"; };
 		96FD7AB015E6B7A60061A49B /* AsteroidParty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsteroidParty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96FD7AB415E6B7A60061A49B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		96FD7AB615E6B7A60061A49B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -101,6 +104,8 @@
 				96FD7ACC15E6B7BC0061A49B /* Asteroid.m */,
 				96FD7AEE15E704EF0061A49B /* Spaceship.h */,
 				96FD7AEF15E704EF0061A49B /* Spaceship.m */,
+				64473A3E15E7258E00B596A5 /* Laser.h */,
+				64473A3F15E7258E00B596A5 /* Laser.m */,
 				96FD7ACE15E6B7CB0061A49B /* AsteroidsView.h */,
 				96FD7ACF15E6B7CB0061A49B /* AsteroidsView.m */,
 				96FD7AC315E6B7A60061A49B /* AppDelegate.h */,
@@ -208,6 +213,7 @@
 				96FD7ACD15E6B7BC0061A49B /* Asteroid.m in Sources */,
 				96FD7AD015E6B7CB0061A49B /* AsteroidsView.m in Sources */,
 				96FD7AF015E704EF0061A49B /* Spaceship.m in Sources */,
+				64473A4015E7258E00B596A5 /* Laser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +321,7 @@
 				96FD7ACA15E6B7A60061A49B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

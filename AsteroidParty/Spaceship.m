@@ -11,13 +11,12 @@
 
 @implementation Spaceship
 @synthesize layer;
-@synthesize currentAngle;
+
 
 +(Spaceship*)createSpaceshipWithPosition:(CGPoint)pos withView:(UIView *)view withImage:(UIImage *)image {
     Spaceship* spaceship = [Spaceship new];
     spaceship.layer = [CALayer new];
     spaceship.layer.position = pos;
-    spaceship.currentAngle = 0.0;
     spaceship.layer.bounds = CGRectMake(0, 0, 50, 50);
     spaceship.layer.contents = (__bridge id)[image CGImage];
     [view.layer addSublayer:spaceship.layer];
@@ -26,15 +25,9 @@
 }
 
 -(void)rotate:(double)destinationAngle {
-    
-    CABasicAnimation* rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-    rotationAnimation.duration = 0;
-    rotationAnimation.fromValue = [NSNumber numberWithFloat:self.currentAngle];
-    rotationAnimation.toValue = [NSNumber numberWithFloat: destinationAngle];
-    self.currentAngle = destinationAngle;
-    rotationAnimation.additive = YES;
-    
-    [self.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    CATransform3D transform = CATransform3DIdentity;
+    transform = CATransform3DRotate(transform, destinationAngle, 0.0, 0.0, -1.0);
+    self.layer.transform = transform;
 }
 
 -(void)destroy {

@@ -11,7 +11,6 @@
 @interface Spaceship : NSObject
 @property CALayer* layer;
 +(Spaceship*)createSpaceshipWithPosition:(CGPoint)pos withView:(UIView*)view withImage:(UIImage*)image;
-@property float currentAngle;
 -(void)destroy;
 -(void)rotate:(double)destinationAngle;
 @end
