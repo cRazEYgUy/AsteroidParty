@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		96FD7AB515E6B7A60061A49B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FD7AB415E6B7A60061A49B /* UIKit.framework */; };
+		96FD7AB715E6B7A60061A49B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FD7AB615E6B7A60061A49B /* Foundation.framework */; };
+		96FD7AB915E6B7A60061A49B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FD7AB815E6B7A60061A49B /* CoreGraphics.framework */; };
+		96FD7ABF15E6B7A60061A49B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96FD7ABD15E6B7A60061A49B /* InfoPlist.strings */; };
+		96FD7AC115E6B7A60061A49B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD7AC015E6B7A60061A49B /* main.m */; };
+		96FD7AC515E6B7A60061A49B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD7AC415E6B7A60061A49B /* AppDelegate.m */; };
+		96FD7ACD15E6B7BC0061A49B /* Asteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD7ACC15E6B7BC0061A49B /* Asteroid.m */; };
+		96FD7AD015E6B7CB0061A49B /* AsteroidsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD7ACF15E6B7CB0061A49B /* AsteroidsView.m */; };
+		96FD7AD215E6B8850061A49B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FD7AD115E6B8850061A49B /* QuartzCore.framework */; };
+		96FD7ADC15E6D6E40061A49B /* asteroid1.png in Resources */ = {isa = PBXBuildFile; fileRef = 96FD7AD915E6D6E10061A49B /* asteroid1.png */; };
+		96FD7ADD15E6D6E40061A49B /* asteroid2.png in Resources */ = {isa = PBXBuildFile; fileRef = 96FD7ADA15E6D6E20061A49B /* asteroid2.png */; };
+		96FD7ADE15E6D6E40061A49B /* asteroid3.png in Resources */ = {isa = PBXBuildFile; fileRef = 96FD7ADB15E6D6E20061A49B /* asteroid3.png */; };
+		96FD7AE215E6E4330061A49B /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 96FD7AE015E6E4330061A49B /* background.png */; };
+		96FD7AE315E6E4330061A49B /* ned.png in Resources */ = {isa = PBXBuildFile; fileRef = 96FD7AE115E6E4330061A49B /* ned.png */; };
+		96FD7AF015E704EF0061A49B /* Spaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD7AEF15E704EF0061A49B /* Spaceship.m */; };
+		96FD7AF215E7134A0061A49B /* asteroid4.png in Resources */ = {isa = PBXBuildFile; fileRef = 96FD7AF115E7134A0061A49B /* asteroid4.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		96FD7AB015E6B7A60061A49B /* AsteroidParty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsteroidParty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96FD7AB415E6B7A60061A49B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		96FD7AB615E6B7A60061A49B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		96FD7AB815E6B7A60061A49B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		96FD7ABC15E6B7A60061A49B /* AsteroidParty-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AsteroidParty-Info.plist"; sourceTree = "<group>"; };
+		96FD7ABE15E6B7A60061A49B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		96FD7AC015E6B7A60061A49B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		96FD7AC215E6B7A60061A49B /* AsteroidParty-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsteroidParty-Prefix.pch"; sourceTree = "<group>"; };
+		96FD7AC315E6B7A60061A49B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		96FD7AC415E6B7A60061A49B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		96FD7ACB15E6B7BC0061A49B /* Asteroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Asteroid.h; path = ../Asteroid.h; sourceTree = "<group>"; };
+		96FD7ACC15E6B7BC0061A49B /* Asteroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Asteroid.m; path = ../Asteroid.m; sourceTree = "<group>"; };
+		96FD7ACE15E6B7CB0061A49B /* AsteroidsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsteroidsView.h; path = ../AsteroidsView.h; sourceTree = "<group>"; };
+		96FD7ACF15E6B7CB0061A49B /* AsteroidsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsteroidsView.m; path = ../AsteroidsView.m; sourceTree = "<group>"; };
+		96FD7AD115E6B8850061A49B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		96FD7AD915E6D6E10061A49B /* asteroid1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid1.png; sourceTree = "<group>"; };
+		96FD7ADA15E6D6E20061A49B /* asteroid2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid2.png; sourceTree = "<group>"; };
+		96FD7ADB15E6D6E20061A49B /* asteroid3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid3.png; sourceTree = "<group>"; };
+		96FD7AE015E6E4330061A49B /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		96FD7AE115E6E4330061A49B /* ned.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ned.png; sourceTree = "<group>"; };
+		96FD7AEE15E704EF0061A49B /* Spaceship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spaceship.h; sourceTree = "<group>"; };
+		96FD7AEF15E704EF0061A49B /* Spaceship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spaceship.m; sourceTree = "<group>"; };
+		96FD7AF115E7134A0061A49B /* asteroid4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid4.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96FD7AAD15E6B7A60061A49B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96FD7AD215E6B8850061A49B /* QuartzCore.framework in Frameworks */,
+				96FD7AB515E6B7A60061A49B /* UIKit.framework in Frameworks */,
+				96FD7AB715E6B7A60061A49B /* Foundation.framework in Frameworks */,
+				96FD7AB915E6B7A60061A49B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		96FD7AA515E6B7A50061A49B = {
+			isa = PBXGroup;
+			children = (
+				96FD7AD115E6B8850061A49B /* QuartzCore.framework */,
+				96FD7ABA15E6B7A60061A49B /* AsteroidParty */,
+				96FD7AB315E6B7A60061A49B /* Frameworks */,
+				96FD7AB115E6B7A60061A49B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		96FD7AB115E6B7A60061A49B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96FD7AB015E6B7A60061A49B /* AsteroidParty.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96FD7AB315E6B7A60061A49B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96FD7AB415E6B7A60061A49B /* UIKit.framework */,
+				96FD7AB615E6B7A60061A49B /* Foundation.framework */,
+				96FD7AB815E6B7A60061A49B /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96FD7ABA15E6B7A60061A49B /* AsteroidParty */ = {
+			isa = PBXGroup;
+			children = (
+				96FD7ACB15E6B7BC0061A49B /* Asteroid.h */,
+				96FD7ACC15E6B7BC0061A49B /* Asteroid.m */,
+				96FD7AEE15E704EF0061A49B /* Spaceship.h */,
+				96FD7AEF15E704EF0061A49B /* Spaceship.m */,
+				96FD7ACE15E6B7CB0061A49B /* AsteroidsView.h */,
+				96FD7ACF15E6B7CB0061A49B /* AsteroidsView.m */,
+				96FD7AC315E6B7A60061A49B /* AppDelegate.h */,
+				96FD7AC415E6B7A60061A49B /* AppDelegate.m */,
+				96FD7ADF15E6D6FA0061A49B /* img */,
+				96FD7ABB15E6B7A60061A49B /* Supporting Files */,
+			);
+			path = AsteroidParty;
+			sourceTree = "<group>";
+		};
+		96FD7ABB15E6B7A60061A49B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				96FD7ABC15E6B7A60061A49B /* AsteroidParty-Info.plist */,
+				96FD7ABD15E6B7A60061A49B /* InfoPlist.strings */,
+				96FD7AC015E6B7A60061A49B /* main.m */,
+				96FD7AC215E6B7A60061A49B /* AsteroidParty-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96FD7ADF15E6D6FA0061A49B /* img */ = {
+			isa = PBXGroup;
+			children = (
+				96FD7AE015E6E4330061A49B /* background.png */,
+				96FD7AF115E7134A0061A49B /* asteroid4.png */,
+				96FD7AE115E6E4330061A49B /* ned.png */,
+				96FD7AD915E6D6E10061A49B /* asteroid1.png */,
+				96FD7ADA15E6D6E20061A49B /* asteroid2.png */,
+				96FD7ADB15E6D6E20061A49B /* asteroid3.png */,
+			);
+			name = img;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96FD7AAF15E6B7A60061A49B /* AsteroidParty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96FD7AC815E6B7A60061A49B /* Build configuration list for PBXNativeTarget "AsteroidParty" */;
+			buildPhases = (
+				96FD7AAC15E6B7A60061A49B /* Sources */,
+				96FD7AAD15E6B7A60061A49B /* Frameworks */,
+				96FD7AAE15E6B7A60061A49B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AsteroidParty;
+			productName = AsteroidParty;
+			productReference = 96FD7AB015E6B7A60061A49B /* AsteroidParty.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96FD7AA715E6B7A50061A49B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Rose CW";
+			};
+			buildConfigurationList = 96FD7AAA15E6B7A50061A49B /* Build configuration list for PBXProject "AsteroidParty" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 96FD7AA515E6B7A50061A49B;
+			productRefGroup = 96FD7AB115E6B7A60061A49B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96FD7AAF15E6B7A60061A49B /* AsteroidParty */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96FD7AAE15E6B7A60061A49B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96FD7ABF15E6B7A60061A49B /* InfoPlist.strings in Resources */,
+				96FD7ADC15E6D6E40061A49B /* asteroid1.png in Resources */,
+				96FD7ADD15E6D6E40061A49B /* asteroid2.png in Resources */,
+				96FD7ADE15E6D6E40061A49B /* asteroid3.png in Resources */,
+				96FD7AE215E6E4330061A49B /* background.png in Resources */,
+				96FD7AE315E6E4330061A49B /* ned.png in Resources */,
+				96FD7AF215E7134A0061A49B /* asteroid4.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96FD7AAC15E6B7A60061A49B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96FD7AC115E6B7A60061A49B /* main.m in Sources */,
+				96FD7AC515E6B7A60061A49B /* AppDelegate.m in Sources */,
+				96FD7ACD15E6B7BC0061A49B /* Asteroid.m in Sources */,
+				96FD7AD015E6B7CB0061A49B /* AsteroidsView.m in Sources */,
+				96FD7AF015E704EF0061A49B /* Spaceship.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		96FD7ABD15E6B7A60061A49B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96FD7ABE15E6B7A60061A49B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		96FD7AC615E6B7A60061A49B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		96FD7AC715E6B7A60061A49B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96FD7AC915E6B7A60061A49B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AsteroidParty/AsteroidParty-Prefix.pch";
+				INFOPLIST_FILE = "AsteroidParty/AsteroidParty-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		96FD7ACA15E6B7A60061A49B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AsteroidParty/AsteroidParty-Prefix.pch";
+				INFOPLIST_FILE = "AsteroidParty/AsteroidParty-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96FD7AAA15E6B7A50061A49B /* Build configuration list for PBXProject "AsteroidParty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96FD7AC615E6B7A60061A49B /* Debug */,
+				96FD7AC715E6B7A60061A49B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96FD7AC815E6B7A60061A49B /* Build configuration list for PBXNativeTarget "AsteroidParty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96FD7AC915E6B7A60061A49B /* Debug */,
+				96FD7ACA15E6B7A60061A49B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96FD7AA715E6B7A50061A49B /* Project object */;
+}
