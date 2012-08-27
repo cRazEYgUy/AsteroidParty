@@ -45,12 +45,12 @@
         [self moveBackground:self.backgroundLayer];
         self.asteroidImages = [NSMutableArray new];
         self.lasers = [NSMutableArray new];
-        for (int i = 1; i < 5; ++i) {
+        for (int i = 1;  i < 5; ++i) {
             [self.asteroidImages addObject:[UIImage imageNamed:[NSString stringWithFormat:@"asteroid%d.png",i]]];
         }
         
         self.asteroids = [NSMutableArray new];
-        for (int i = 0; i<= 20; i++) {
+        for (int i = 0; i<= 6; i++) {
             CGFloat x,y;
             do {
                 x = (((double) arc4random()/UINT_MAX) * frame.size.width) - frame.size.width;
