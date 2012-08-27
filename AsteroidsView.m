@@ -40,11 +40,11 @@
         }
         
         self.asteroids = [NSMutableArray new];
-        for (int i = 0; i<= 20; i++) {
+        for (int i = 0; i<= 10; i++) {
             CGFloat x,y;
             do {
-                x = (((double) arc4random()/UINT_MAX) * frame.size.width) - frame.size.width;
-                y = (((double) arc4random()/UINT_MAX) * frame.size.height) - frame.size.height;
+                x = (arc4random()%(int)frame.size.width) - frame.size.width;
+                y = (arc4random()%(int)frame.size.height) - frame.size.height;
             } while ( sqrt(pow(x, 2)+pow(y, 2)) < 150 );
             Asteroid* asteroid = [Asteroid createAsteroidWithPosition:CGPointMake(self.center.x + x, self.center.y + y) withView:self withImage:[self.asteroidImages objectAtIndex:(arc4random()%[self.asteroidImages count])]];
             [self.asteroids addObject:asteroid];
